@@ -1,0 +1,49 @@
+body {
+  background-color: #09090b;
+  color: #e4e4e7;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+.font-cinzel {
+  font-family: "Cinzel", serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #26262b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c59b27;
+}
+
+/* Ambient Glow & Texture */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff2a3 0%, #e0aa3e 50%, #8a640f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 0 25px rgba(224, 170, 62, 0.25);
+  border-color: rgba(224, 170, 62, 0.6);
+}
+
+.glass-panel {
+  background: rgba(18, 18, 21, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
