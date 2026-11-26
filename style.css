@@ -43,7 +43,44 @@ body {
 }
 
 .glass-panel {
-  background: rgba(18, 18, 21, 0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(18, 18, 21, 0);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Container fixo para cobrir toda a tela ou seção */
+.video-bg-container {
+  position: fixed; /* Use 'absolute' se quiser o vídeo apenas em uma seção específica */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Garante que o vídeo fique atrás de todo o conteúdo */
+  overflow: hidden;
+}
+
+/* Ajuste e preenchimento do vídeo na tela */
+.video-bg-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que o vídeo cubra toda a área sem distorcer */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Overlay escuro para manter o contraste dos textos */
+.video-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    5,
+    5,
+    8,
+    0.2
+  ); /* Ajuste a opacidade (0.75) conforme necessário */
+  pointer-events: none;
 }
