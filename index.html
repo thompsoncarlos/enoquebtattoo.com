@@ -9,6 +9,7 @@
         <!-- FontAwesome Icons -->
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="./style.css">
         <!-- Google Fonts: Orbitron, Cinzel Decorative & Inter -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,126 +49,22 @@
             }
         }
     </script>
-        <style>
-        body {
-            background-color: #070611;
-            color: #e4e4e7;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #070611;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00E5FF;
-            border-radius: 4px;
-            box-shadow: 0 0 10px #00E5FF;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #FFD700;
-        }
-
-        /* Scouter / Anime Frame Border Aesthetics */
-        .scouter-box {
-            position: relative;
-            background: rgba(15, 13, 36, 0.75);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(0, 229, 255, 0.25);
-            clip-path: polygon(
-                0 15px, 15px 0, 
-                calc(100% - 15px) 0, 100% 15px, 
-                100% calc(100% - 15px), calc(100% - 15px) 100%, 
-                15px 100%, 0 calc(100% - 15px)
-            );
-        }
-        
-        .scouter-box-gold {
-            position: relative;
-            background: rgba(15, 13, 36, 0.85);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 215, 0, 0.35);
-            clip-path: polygon(
-                0 15px, 15px 0, 
-                calc(100% - 15px) 0, 100% 15px, 
-                100% calc(100% - 15px), calc(100% - 15px) 100%, 
-                15px 100%, 0 calc(100% - 15px)
-            );
-        }
-
-        /* Ki & Cosmo Text Gradient */
-        .gold-cosmo-text {
-            background: linear-gradient(135deg, #FFF5B7 0%, #FFD700 50%, #FF8C00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .ki-aura-text {
-            background: linear-gradient(135deg, #E0FFFF 0%, #00E5FF 50%, #0077FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Glow Animations */
-        @keyframes auraGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.2); }
-            50% { box-shadow: 0 0 35px rgba(0, 229, 255, 0.8), inset 0 0 20px rgba(0, 229, 255, 0.4); }
-        }
-
-        @keyframes cosmoGoldPulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); border-color: rgba(255, 215, 0, 0.6); }
-            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); border-color: rgba(255, 215, 0, 1); }
-        }
-
-        .ki-glow-border {
-            animation: auraGlow 3s infinite ease-in-out;
-        }
-
-        .gold-cosmo-border:hover {
-            animation: cosmoGoldPulse 2s infinite ease-in-out;
-        }
-
-        /* Floating Dragon Ball Icon Spheres */
-        .dragon-ball {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, #FFF066, #FF9900 65%, #CC3300 90%);
-            box-shadow: 0 0 15px rgba(255, 153, 0, 0.6), inset -2px -2px 6px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #CC0000;
-            font-weight: 900;
-        }
-    </style>
     </head>
     <body class="selection:bg-ki-cyan selection:text-black">
-
-        <!-- CANVAS BACKGROUND (Cosmo Starfield & Ki Particles) -->
-        <canvas id="cosmo-canvas"
-            class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
-
         <!-- HEADER / NAVIGATION -->
         <header id="main-header"
             class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-4">
             <div
                 class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                <!-- Brand Logo -->
+                <!-- Brand Logo & Artist Badge -->
                 <a href="#home" class="flex items-center gap-3 group">
                     <div
-                        class="relative w-12 h-12 rounded-full border-2 border-ki-cyan flex items-center justify-center bg-animeDark-950/80 group-hover:border-cosmo-gold transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.4)]">
-                        <span
-                            class="font-orbitron font-black text-ki-cyan group-hover:text-cosmo-gold text-xl transition-colors">
-                            <img src="./assets/enoque_logo.png"
-                                alt="Enoque B. Tattoo Logo"
-                                class="w-8 h-8 object-contain">
-                        </span>
+                        class="relative w-12 h-12 rounded-full border-2 border-ki-cyan flex items-center justify-center bg-animeDark-950/90 group-hover:border-cosmo-gold transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.4)] overflow-hidden">
+                        <!-- Brand Avatar Logo -->
+                        <img src="./assets/enoque_logo.png"
+                            onerror="this.onerror=null; this.src='https://placehold.co/100x100/070611/00E5FF?text=EB+TATTOO';"
+                            alt="Logo Enoque Barbosa Tattoo"
+                            class="w-full h-full object-cover">
                         <span class="absolute -top-1 -right-1 flex h-3 w-3">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ki-cyan opacity-75"></span>
@@ -178,7 +75,7 @@
                     <div class="flex flex-col">
                         <span
                             class="font-orbitron font-extrabold tracking-wider text-base text-white group-hover:text-ki-cyan transition-colors flex items-center gap-2">
-                            ENOQUE B.
+                            ENOQUE B. TATTOO
                         </span>
                         <span
                             class="text-[9px] tracking-[0.25em] text-zinc-400 uppercase -mt-1 font-mono">ANIME
@@ -198,14 +95,13 @@
                         class="hover:text-ki-cyan transition-colors py-1">Galeria
                     </a>
                     <a href="#cuidados"
-                        class="hover:text-ki-cyan transition-colors py-1">Cuidados
-                    </a>
+                        class="hover:text-ki-cyan transition-colors py-1">Cuidados</a>
                     <a href="#orcamento"
                         class="hover:text-cosmo-gold transition-colors py-1 text-cosmo-gold">Orçamento
                     </a>
                 </nav>
 
-                <!-- Scouter IG Button & Mobile Menu Toggle -->
+                <!-- Instagram Direct Scouter CTA & Mobile Menu Toggle -->
                 <div class="flex items-center gap-3">
                     <a href="https://www.instagram.com/enoquebtattoo_/"
                         target="_blank" rel="noopener noreferrer"
@@ -234,10 +130,10 @@
                     Geek</a>
                 <a href="#cuidados"
                     class="mobile-nav-link py-2 text-zinc-200 hover:text-ki-cyan">Guia
-                    Guerreiro(a)</a>
+                    Guerreiro</a>
                 <a href="#orcamento"
                     class="mobile-nav-link py-2 text-cosmo-gold hover:text-white font-bold">Orçamento
-                    Saiya-jin</a>
+                    Saiyan-jin</a>
                 <a href="https://www.instagram.com/enoquebtattoo_/"
                     target="_blank"
                     class="py-3 text-ki-cyan flex items-center justify-center gap-2 border border-ki-cyan/40 rounded-lg">
@@ -246,12 +142,11 @@
             </div>
         </header>
 
-        <!-- HERO SECTION -->
+        <!-- HERO SECTION WITH VIDEO BACKGROUND -->
         <section id="home"
-            class="relative min-h-screen flex items-center justify-center pt-24 pb-16  overflow-hidden">
-            <!-- Radial Ambient Lights -->
+            class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden z-10">
             <div
-                class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[700px] bg-gold-500/10 rounded-full blur-[2px] pointer-events-none">
+                class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[700px] bg-gold-500/10 rounded-full blur-[4px] pointer-events-none">
                 <div class="video-bg-container">
                     <video
                         class="video-bg-element"
@@ -272,9 +167,9 @@
             <div
                 class="absolute bottom-10 left-10 w-72 h-72 bg-zinc-800/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-                <!-- Scouter HUD Badge -->
+            <div class="max-w-6xl mx-auto py-12 px-6 text-center relative z-10">
                 <h1
-                    class="font-cinzelDeco py-8 text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+                    class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
                     ELEVE SEU COSMO NA PELE <br />
                     <span class="gold-cosmo-text uppercase">SUPERE SEUS
                         LIMITES</span> EM CADA TRAÇO
@@ -296,7 +191,7 @@
                     <a href="#orcamento"
                         class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cosmo-gold to-ki-orange hover:from-ki-orange hover:to-cosmo-gold text-black font-orbitron font-extrabold text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.4)] flex items-center justify-center gap-3">
                         <i class="fa-solid fa-meteor text-base"></i>
-                        <span>Orçamento</span>
+                        <span>Solicitar Orçamento</span>
                     </a>
                     <a href="#galeria"
                         class="w-full sm:w-auto px-8 py-4 rounded-xl scouter-box text-ki-cyan hover:text-white border border-ki-cyan/50 text-xs font-orbitron font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3">
@@ -334,7 +229,7 @@
                     <div class="p-4 scouter-box text-center">
                         <span
                             class="block font-orbitron text-2xl font-black text-ki-cyan">Sementes
-                            dos Deuses</span>
+                            Deuses</span>
                         <span
                             class="text-[10px] text-zinc-400 font-mono uppercase tracking-widest mt-1">Biossegurança
                             100%</span>
@@ -352,7 +247,6 @@
                     <!-- Artist Visual Showcase with Scouter HUD Overlay -->
                     <div class="lg:col-span-5 relative">
                         <div class="scouter-box-gold p-3 relative rounded-2xl">
-                            <!-- Target HUD UI corner brackets -->
                             <div
                                 class="absolute top-2 left-2 text-cosmo-gold text-xs font-mono">┌
                                 HUD_TARGET</div>
@@ -362,7 +256,7 @@
                             <img
                                 src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80"
                                 alt="Enoque B. Tattoo Artist Anime Specialist"
-                                class="w-full h-[450px] object-cover rounded-xl contrast-125 filter hue-rotate-15">
+                                class="w-full h-[450px] object-cover rounded-xl contrast-125 filter">
                             <div
                                 class="absolute bottom-4 left-4 right-4 bg-animeDark-950/90 border border-cosmo-gold/40 p-3 rounded-xl flex items-center justify-between">
                                 <span
@@ -370,7 +264,7 @@
                                     TATUADOR</span>
                                 <span
                                     class="text-[10px] font-mono text-ki-cyan">RANK:
-                                    GOLD SAINT / Saiya-jin GOD</span>
+                                    GOLD SAINT / Saiyan-jin GOD</span>
                             </div>
                         </div>
                     </div>
@@ -447,11 +341,11 @@
                         japonesa.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <!-- Style Card 1: Manga Ink & Blackwork -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <!-- Style Card 1: Anime B&W / Manga Ink -->
                     <div
                         class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-cyan transition-all duration-500">
-                        <div class="h-60 overflow-hidden relative">
+                        <div class="h-56 overflow-hidden relative">
                             <img
                                 src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=80"
                                 alt="Mangá Blackwork Tattoo"
@@ -459,51 +353,50 @@
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
                         </div>
-                        <div class="p-5 relative -mt-10">
+                        <div class="p-4 relative -mt-10">
                             <span
-                                class="text-[10px] font-mono text-ki-cyan uppercase tracking-widest">DRAGON
-                                BALL / SHONEN</span>
+                                class="text-[9px] font-mono text-ki-cyan uppercase tracking-widest">BLACK
+                                &amp; WHITE</span>
                             <h3
-                                class="font-orbitron text-base font-bold text-white group-hover:text-ki-cyan transition-colors">Mangá
-                                &amp; Hachuras</h3>
+                                class="font-orbitron text-sm font-bold text-white group-hover:text-ki-cyan transition-colors">Anime
+                                B&amp;W</h3>
                             <p
-                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                class="text-zinc-400 text-[11px] mt-1 leading-relaxed">
                                 Preto denso e linhas duplas inspiradas nos
-                                traços originais dos quadrinhos japoneses.
+                                traços dos mangás originais.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Style Card 2: Fine Line Anime -->
+                    <!-- Style Card 2: Cyberpunk Geek -->
                     <div
                         class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-cyan transition-all duration-500">
-                        <div class="h-60 overflow-hidden relative">
+                        <div class="h-56 overflow-hidden relative">
                             <img
-                                src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=600&q=80"
-                                alt="Fine Line Anime Tattoo"
+                                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80"
+                                alt="Cyberpunk Tattoo"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
                         </div>
-                        <div class="p-5 relative -mt-10">
+                        <div class="p-4 relative -mt-10">
                             <span
-                                class="text-[10px] font-mono text-cosmo-gold uppercase tracking-widest">MINIMALISTA
-                                GEEK</span>
+                                class="text-[9px] font-mono text-ki-cyan uppercase tracking-widest">CYBERPUNK</span>
                             <h3
-                                class="font-orbitron text-base font-bold text-white group-hover:text-cosmo-gold transition-colors">Fine
-                                Line Anime</h3>
+                                class="font-orbitron text-sm font-bold text-white group-hover:text-ki-cyan transition-colors">Cyberpunk
+                                Geek</h3>
                             <p
-                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Traços ultrafinos para símbolos geek, runas,
-                                frases em kanji e silhuetas delicadas.
+                                class="text-zinc-400 text-[11px] mt-1 leading-relaxed">
+                                Néon futurista, circuitos e elementos sci-fi com
+                                alto contraste.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Style Card 3: Saint Seiya Gold Realism -->
+                    <!-- Style Card 3: Saint Seiya Cosmo -->
                     <div
                         class="group relative rounded-2xl overflow-hidden scouter-box hover:border-cosmo-gold transition-all duration-500">
-                        <div class="h-60 overflow-hidden relative">
+                        <div class="h-56 overflow-hidden relative">
                             <img
                                 src="https://images.unsplash.com/photo-1590246814884-570aafd227b9?auto=format&fit=crop&w=600&q=80"
                                 alt="Armaduras de Ouro Tattoo"
@@ -511,43 +404,69 @@
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
                         </div>
-                        <div class="p-5 relative -mt-10">
+                        <div class="p-4 relative -mt-10">
                             <span
-                                class="text-[10px] font-mono text-cosmo-gold uppercase tracking-widest">CAVALEIROS
-                                DO ZODÍACO</span>
+                                class="text-[9px] font-mono text-cosmo-gold uppercase tracking-widest">SAINT
+                                SEIYA</span>
                             <h3
-                                class="font-orbitron text-base font-bold text-white group-hover:text-cosmo-gold transition-colors">Gold
-                                Cloth Realism</h3>
+                                class="font-orbitron text-sm font-bold text-white group-hover:text-cosmo-gold transition-colors">Saint
+                                Seiya Cosmo</h3>
                             <p
-                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                class="text-zinc-400 text-[11px] mt-1 leading-relaxed">
                                 Efeito metálico reluzente e degradê preto/cinza
-                                simulando armaduras de ouro dos Cavaleiros.
+                                simulando armaduras de ouro.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Style Card 4: Saiya-jin Ki Color & Neon -->
+                    <!-- Style Card 4: Dragon Ball Saiyan-jin -->
                     <div
                         class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-orange transition-all duration-500">
-                        <div class="h-60 overflow-hidden relative">
+                        <div class="h-56 overflow-hidden relative">
                             <img
                                 src="https://images.unsplash.com/photo-1550684848-acc19240409a?auto=format&fit=crop&w=600&q=80"
-                                alt="Super Saiya-jin Ki Color Tattoo"
+                                alt="Super Saiyan-jin Ki Color Tattoo"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
                         </div>
-                        <div class="p-5 relative -mt-10">
+                        <div class="p-4 relative -mt-10">
                             <span
-                                class="text-[10px] font-mono text-ki-orange uppercase tracking-widest">SUPER
-                                Saiya-jin / NEON</span>
+                                class="text-[9px] font-mono text-ki-orange uppercase tracking-widest">DRAGON
+                                BALL</span>
                             <h3
-                                class="font-orbitron text-base font-bold text-white group-hover:text-ki-orange transition-colors">Ki
-                                Energy Colors</h3>
+                                class="font-orbitron text-sm font-bold text-white group-hover:text-ki-orange transition-colors">Dragon
+                                Ball Saiyan-jin</h3>
                             <p
-                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                class="text-zinc-400 text-[11px] mt-1 leading-relaxed">
                                 Pigmentação de alta intensidade para auras de
-                                energia Super Saiya-jin, Kamehameha e fogo.
+                                energia Super Saiyan-jin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Style Card 5: Geek Fine Line -->
+                    <div
+                        class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-cyan transition-all duration-500">
+                        <div class="h-56 overflow-hidden relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=600&q=80"
+                                alt="Fine Line Anime Tattoo"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
+                        </div>
+                        <div class="p-4 relative -mt-10">
+                            <span
+                                class="text-[9px] font-mono text-cosmo-gold uppercase tracking-widest">FINE
+                                LINE</span>
+                            <h3
+                                class="font-orbitron text-sm font-bold text-white group-hover:text-cosmo-gold transition-colors">Geek
+                                Fine Line</h3>
+                            <p
+                                class="text-zinc-400 text-[11px] mt-1 leading-relaxed">
+                                Traços ultrafinos para símbolos geek, runas,
+                                kanjis e silhuetas delicadas.
                             </p>
                         </div>
                     </div>
@@ -567,10 +486,6 @@
                             <span
                                 class="text-xs font-mono font-semibold text-cosmo-gold tracking-[0.3em] uppercase">Galeria
                                 Geek</span>
-                            <span id="api-status-badge"
-                                class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-ki-cyan/20 text-ki-cyan border border-ki-cyan/40">
-                                MODO PORTFÓLIO LOCAL ANIME
-                            </span>
                         </div>
                         <h2
                             class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white mt-2">Trabalhos
@@ -582,16 +497,16 @@
                         <div
                             class="inline-flex p-1 rounded-xl bg-animeDark-950 border border-ki-cyan/30 text-xs font-orbitron">
                             <button
-                                class="filter-btn active px-4 py-2 rounded-lg bg-ki-cyan text-black font-bold transition-all"
+                                class="filter-btn active px-3 py-1.5 rounded-lg bg-ki-cyan text-black font-bold transition-all"
                                 data-filter="all">Todos</button>
                             <button
-                                class="filter-btn px-4 py-2 rounded-lg text-zinc-400 hover:text-white transition-all"
+                                class="filter-btn px-3 py-1.5 rounded-lg text-zinc-400 hover:text-white transition-all"
                                 data-filter="dragonball">Dragon Ball</button>
                             <button
-                                class="filter-btn px-4 py-2 rounded-lg text-zinc-400 hover:text-white transition-all"
+                                class="filter-btn px-3 py-1.5 rounded-lg text-zinc-400 hover:text-white transition-all"
                                 data-filter="cdz">Cavaleiros Zodíaco</button>
                             <button
-                                class="filter-btn px-4 py-2 rounded-lg text-zinc-400 hover:text-white transition-all"
+                                class="filter-btn px-3 py-1.5 rounded-lg text-zinc-400 hover:text-white transition-all"
                                 data-filter="shonen">Outros Animes</button>
                         </div>
 
@@ -711,7 +626,7 @@
             </div>
         </div>
 
-        <!-- WARRIOR CARE GUIDE SECTION (GUIA DO Guerreiro(a)) -->
+        <!-- WARRIOR CARE GUIDE SECTION -->
         <section id="cuidados"
             class="py-24 bg-animeDark-950 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-4xl mx-auto px-6">
@@ -724,7 +639,7 @@
                         do Guerreiro(a) &amp; Cuidados</h2>
                     <p class="text-zinc-400 text-sm mt-2 font-light">Preparação
                         e cicatrização dignas de um Cavaleiro de Ouro ou Super
-                        Saiya-jin.</p>
+                        Saiyan-jin.</p>
                 </div>
 
                 <div class="space-y-4">
@@ -790,7 +705,7 @@
             </div>
         </section>
 
-        <!-- Saiya-jin BUDGET CALCULATOR / WHATSAPP FORM -->
+        <!-- Saiyan-jin BUDGET CALCULATOR / WHATSAPP FORM -->
         <section id="orcamento"
             class="py-24 bg-animeDark-900/90 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-5xl mx-auto px-6">
@@ -800,8 +715,8 @@
                         <span
                             class="text-xs font-mono font-semibold text-cosmo-gold tracking-[0.3em] uppercase">Agendamento</span>
                         <h2
-                            class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white">Solicite
-                            Seu Orçamento</h2>
+                            class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white">
+                            Solicitar Orçamento</h2>
                         <p
                             class="text-zinc-300 text-sm leading-relaxed font-light font-sans">
                             Preencha o formulário e calcule o nível de energia
@@ -823,8 +738,7 @@
                                         Direto</span>
                                     <span
                                         class="text-sm font-orbitron text-white">+351
-                                        939 429 702
-                                    </span>
+                                        939 429 702</span>
                                 </div>
                             </div>
 
@@ -835,18 +749,12 @@
                                         class="fa-solid fa-location-dot text-lg"></i>
                                 </div>
                                 <div>
-                                    <a
-                                        href="https://maps.app.goo.gl/DFi4U2uGoVVk1GLZ7"
-                                        target="_blank">
-                                        <span
-                                            class="block text-xs font-mono text-zinc-400 uppercase">Estúdio
-                                            Atendimento
-                                        </span>
-                                        <span
-                                            class="text-sm font-orbitron text-white">INK
-                                            COLLECTIVE TATTOO
-                                        </span>
-                                    </a>
+                                    <span
+                                        class="block text-xs font-mono text-zinc-400 uppercase">Estúdio
+                                        Atendimento</span>
+                                    <span
+                                        class="text-sm font-orbitron text-white">INK
+                                        COLLECTIVE TATTOO</span>
                                 </div>
                             </div>
                         </div>
@@ -906,17 +814,19 @@
                                     <select id="form-style"
                                         class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-zinc-200 focus:outline-none focus:border-cosmo-gold">
                                         <option
-                                            value="Mangá Blackwork (Hachuras)">Mangá
-                                            Blackwork (Hachuras)</option>
+                                            value="Anime B&W (Mangá Hachuras)">Anime
+                                            B&W (Mangá Hachuras)</option>
+                                        <option value="Cyberpunk Geek">Cyberpunk
+                                            Geek</option>
                                         <option
-                                            value="Fine Line Minimalista">Fine
-                                            Line Minimalista</option>
+                                            value="Saint Seiya Cosmo Metal">Saint
+                                            Seiya Cosmo Metal</option>
                                         <option
-                                            value="Saint Seiya Gold Metal">Saint
-                                            Seiya Gold Metal</option>
+                                            value="Dragon Ball Saiyan-jin Colored">Dragon
+                                            Ball Saiyan-jin Colored</option>
                                         <option
-                                            value="Super Saiya-jin Ki Colored">Super
-                                            Saiya-jin Ki Colored</option>
+                                            value="Geek Fine Line Minimalista">Geek
+                                            Fine Line Minimalista</option>
                                     </select>
                                 </div>
                             </div>
@@ -1003,7 +913,7 @@
             {
                 id: '1',
                 category: 'dragonball',
-                title: 'Goku Super Saiya-jin 3 & Ki Aura',
+                title: 'Goku Super Saiyan-jin 3 & Ki Aura',
                 style: 'Ki Color & Manga',
                 imageUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80',
                 caption: 'Composição autoral com degradê de energia Ki e hachuras estilo mangá.',
@@ -1023,7 +933,7 @@
             {
                 id: '3',
                 category: 'dragonball',
-                title: 'Vegeta Príncipe dos Saiya-jins',
+                title: 'Vegeta Príncipe dos Saiyan-jins',
                 style: 'Mangá Blackwork',
                 imageUrl: 'https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=800&q=80',
                 caption: 'Blackwork intenso com sombras sólidas e traço fiel ao mestre Toriyama.',

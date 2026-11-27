@@ -1,63 +1,130 @@
 body {
-  background-color: #09090b;
+  background-color: #070611;
   color: #e4e4e7;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
-.font-cinzel {
-  font-family: "Cinzel", serif;
-}
 
-/* Custom scrollbar */
+/* Custom Animated Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #070611;
 }
 ::-webkit-scrollbar-thumb {
-  background: #26262b;
+  background: #00e5ff;
   border-radius: 4px;
+  box-shadow: 0 0 10px #00e5ff;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c59b27;
+  background: #ffd700;
 }
 
-/* Ambient Glow & Texture */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* Scouter / Futuristic Cyber-Anime Border Frames */
+.scouter-box {
+  position: relative;
+  background: rgba(15, 13, 36, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    calc(100% - 15px) 0,
+    100% 15px,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 calc(100% - 15px)
+  );
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #fff2a3 0%, #e0aa3e 50%, #8a640f 100%);
+.scouter-box-gold {
+  position: relative;
+  background: rgba(15, 13, 36, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    calc(100% - 15px) 0,
+    100% 15px,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 calc(100% - 15px)
+  );
+}
+
+/* Ki & Cosmo Text Gradient Styling */
+.gold-cosmo-text {
+  background: linear-gradient(135deg, #fff5b7 0%, #ffd700 50%, #ff8c00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-border-glow:hover {
-  box-shadow: 0 0 25px rgba(224, 170, 62, 0.25);
-  border-color: rgba(224, 170, 62, 0.6);
+.ki-aura-text {
+  background: linear-gradient(135deg, #e0ffff 0%, #00e5ff 50%, #0077ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.glass-panel {
-  background: rgba(18, 18, 21, 0);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Energy Glow Animations */
+@keyframes auraGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 15px rgba(0, 229, 255, 0.4),
+      inset 0 0 10px rgba(0, 229, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(0, 229, 255, 0.8),
+      inset 0 0 20px rgba(0, 229, 255, 0.4);
+  }
 }
 
-/* Container fixo para cobrir toda a tela ou seção */
-.video-bg-container {
-  position: fixed; /* Use 'absolute' se quiser o vídeo apenas em uma seção específica */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1; /* Garante que o vídeo fique atrás de todo o conteúdo */
-  overflow: hidden;
+@keyframes cosmoGoldPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    border-color: rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+    border-color: rgba(255, 215, 0, 1);
+  }
 }
 
+.ki-glow-border {
+  animation: auraGlow 3s infinite ease-in-out;
+}
+
+.gold-cosmo-border:hover {
+  animation: cosmoGoldPulse 2s infinite ease-in-out;
+}
+
+/* Dragon Ball Floating Orb Assets */
+.dragon-ball {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff066,
+    #ff9900 65%,
+    #cc3300 90%
+  );
+  box-shadow:
+    0 0 15px rgba(255, 153, 0, 0.6),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #cc0000;
+  font-weight: 900;
+}
 /* Ajuste e preenchimento do vídeo na tela */
 .video-bg-element {
   width: 100%;
