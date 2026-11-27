@@ -3,139 +3,264 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Enoque B. Tattoo | Studio - Anime and Geek Art</title>
+        <title>Enoque B. Tattoo | Anime & Geek Tattoo Studio</title>
         <!-- Tailwind CSS CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./main.js"></script>
         <!-- FontAwesome Icons -->
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <!-- Google Fonts: Cinzel & Inter -->
+        <!-- Google Fonts: Orbitron, Cinzel Decorative & Inter -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="./style.css">
         <link
-            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Orbitron:wght@400;600;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
 
+        <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cosmo: {
+                            gold: '#FFD700',
+                            glow: '#FFA500',
+                            deep: '#B8860B',
+                        },
+                        ki: {
+                            cyan: '#00E5FF',
+                            blue: '#0077FF',
+                            orange: '#FF4500',
+                        },
+                        animeDark: {
+                            950: '#070611',
+                            900: '#0F0D24',
+                            800: '#1A173B',
+                            700: '#282454',
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        cinzelDeco: ['Cinzel Decorative', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+        <style>
+        body {
+            background-color: #070611;
+            color: #e4e4e7;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070611;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00E5FF;
+            border-radius: 4px;
+            box-shadow: 0 0 10px #00E5FF;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFD700;
+        }
+
+        /* Scouter / Anime Frame Border Aesthetics */
+        .scouter-box {
+            position: relative;
+            background: rgba(15, 13, 36, 0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            clip-path: polygon(
+                0 15px, 15px 0, 
+                calc(100% - 15px) 0, 100% 15px, 
+                100% calc(100% - 15px), calc(100% - 15px) 100%, 
+                15px 100%, 0 calc(100% - 15px)
+            );
+        }
+        
+        .scouter-box-gold {
+            position: relative;
+            background: rgba(15, 13, 36, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            clip-path: polygon(
+                0 15px, 15px 0, 
+                calc(100% - 15px) 0, 100% 15px, 
+                100% calc(100% - 15px), calc(100% - 15px) 100%, 
+                15px 100%, 0 calc(100% - 15px)
+            );
+        }
+
+        /* Ki & Cosmo Text Gradient */
+        .gold-cosmo-text {
+            background: linear-gradient(135deg, #FFF5B7 0%, #FFD700 50%, #FF8C00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ki-aura-text {
+            background: linear-gradient(135deg, #E0FFFF 0%, #00E5FF 50%, #0077FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glow Animations */
+        @keyframes auraGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 229, 255, 0.4), inset 0 0 10px rgba(0, 229, 255, 0.2); }
+            50% { box-shadow: 0 0 35px rgba(0, 229, 255, 0.8), inset 0 0 20px rgba(0, 229, 255, 0.4); }
+        }
+
+        @keyframes cosmoGoldPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); border-color: rgba(255, 215, 0, 0.6); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); border-color: rgba(255, 215, 0, 1); }
+        }
+
+        .ki-glow-border {
+            animation: auraGlow 3s infinite ease-in-out;
+        }
+
+        .gold-cosmo-border:hover {
+            animation: cosmoGoldPulse 2s infinite ease-in-out;
+        }
+
+        /* Floating Dragon Ball Icon Spheres */
+        .dragon-ball {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #FFF066, #FF9900 65%, #CC3300 90%);
+            box-shadow: 0 0 15px rgba(255, 153, 0, 0.6), inset -2px -2px 6px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #CC0000;
+            font-weight: 900;
+        }
+    </style>
     </head>
-    <body class="selection:bg-gold-500 selection:text-black">
+    <body class="selection:bg-ki-cyan selection:text-black">
+
+        <!-- CANVAS BACKGROUND (Cosmo Starfield & Ki Particles) -->
+        <canvas id="cosmo-canvas"
+            class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+        <!-- HEADER / NAVIGATION -->
         <header id="main-header"
-            class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-5">
+            class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-4">
             <div
                 class="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 <!-- Brand Logo -->
                 <a href="#home" class="flex items-center gap-3 group">
                     <div
-                        class="w-10 h-10 rounded-full border border-gold-500/40 flex items-center justify-center bg-black/50 group-hover:border-gold-400 transition-colors">
+                        class="relative w-12 h-12 rounded-full border-2 border-ki-cyan flex items-center justify-center bg-animeDark-950/80 group-hover:border-cosmo-gold transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.4)]">
                         <span
-                            class="font-cinzel text-gold-400 font-bold text-xl">
+                            class="font-orbitron font-black text-ki-cyan group-hover:text-cosmo-gold text-xl transition-colors">
                             <img src="./assets/enoque_logo.png"
                                 alt="Enoque B. Tattoo Logo"
                                 class="w-8 h-8 object-contain">
                         </span>
+                        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ki-cyan opacity-75"></span>
+                            <span
+                                class="relative inline-flex rounded-full h-3 w-3 bg-cosmo-gold"></span>
+                        </span>
                     </div>
                     <div class="flex flex-col">
                         <span
-                            class="font-cinzel tracking-widest font-bold text-lg text-white group-hover:text-gold-400 transition-colors">ENOQUE
-                            B.</span>
+                            class="font-orbitron font-extrabold tracking-wider text-base text-white group-hover:text-ki-cyan transition-colors flex items-center gap-2">
+                            ENOQUE B.
+                        </span>
                         <span
-                            class="text-[9px] tracking-[0.25em] text-zinc-400 uppercase -mt-1">ANIME
+                            class="text-[9px] tracking-[0.25em] text-zinc-400 uppercase -mt-1 font-mono">ANIME
                             &amp; GEEK TATTOO ARTIST</span>
                     </div>
                 </a>
 
+                <!-- Desktop Nav Links -->
                 <nav
-                    class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase text-zinc-300 font-medium">
+                    class="hidden md:flex items-center gap-6 text-xs font-orbitron tracking-widest uppercase text-zinc-300 font-semibold">
                     <a href="#home"
-                        class="nav-link hover:text-gold-400 transition-colors py-1">Início</a>
-                    <a href="#sobre"
-                        class="nav-link hover:text-gold-400 transition-colors py-1">Sobre</a>
+                        class="hover:text-ki-cyan transition-colors py-1">Início</a>
                     <a href="#estilos"
-                        class="nav-link hover:text-gold-400 transition-colors py-1">Estilos</a>
+                        class="hover:text-ki-cyan transition-colors py-1">Estilos
+                    </a>
                     <a href="#galeria"
-                        class="nav-link hover:text-gold-400 transition-colors py-1">Galeria</a>
+                        class="hover:text-ki-cyan transition-colors py-1">Galeria
+                    </a>
                     <a href="#cuidados"
-                        class="nav-link hover:text-gold-400 transition-colors py-1">Cuidados</a>
+                        class="hover:text-ki-cyan transition-colors py-1">Cuidados
+                    </a>
                     <a href="#orcamento"
-                        class="nav-link hover:text-gold-400 transition-colors py-1">Orçamento</a>
+                        class="hover:text-cosmo-gold transition-colors py-1 text-cosmo-gold">Orçamento
+                    </a>
                 </nav>
 
-                <!-- Instagram Direct & Mobile Menu Toggle -->
-                <div class="flex items-center gap-4">
+                <!-- Scouter IG Button & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
                     <a href="https://www.instagram.com/enoquebtattoo_/"
                         target="_blank" rel="noopener noreferrer"
-                        class="hidden sm:inline-flex items-center gap-2 text-xs tracking-wider uppercase font-semibold px-4 py-2.5 rounded-full border border-gold-500/30 bg-gold-500/10 hover:bg-gold-500 hover:text-black transition-all duration-300 text-gold-400">
+                        class="hidden sm:inline-flex items-center gap-2 text-xs font-orbitron tracking-wider uppercase font-bold px-4 py-2.5 rounded-lg border border-ki-cyan/40 bg-ki-cyan/10 hover:bg-ki-cyan hover:text-black transition-all duration-300 text-ki-cyan shadow-[0_0_15px_rgba(0,229,255,0.2)]">
                         <i class="fa-brands fa-instagram text-base"></i>
                         <span>@enoquebtattoo_</span>
                     </a>
 
                     <button id="mobile-menu-btn" aria-label="Abrir menu"
-                        class="md:hidden text-zinc-300 hover:text-white text-2xl focus:outline-none">
-                        <i class="fa-solid fa-bars"></i>
+                        class="md:hidden text-ki-cyan hover:text-white text-2xl focus:outline-none p-2">
+                        <i class="fa-solid fa-dragon"></i>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile Dropdown Menu -->
             <div id="mobile-menu"
-                class="hidden md:hidden glass-panel border-t border-zinc-800/80 px-6 py-6 mt-4 flex flex-col gap-4 text-center text-sm font-cinzel tracking-widest uppercase">
+                class="hidden md:hidden scouter-box border-t border-ki-cyan/30 px-6 py-6 mt-4 flex flex-col gap-4 text-center text-xs font-orbitron tracking-widest uppercase">
                 <a href="#home"
-                    class="mobile-nav-link py-2 text-zinc-300 hover:text-gold-400">Início</a>
-                <a href="#sobre"
-                    class="mobile-nav-link py-2 text-zinc-300 hover:text-gold-400">Sobre</a>
+                    class="mobile-nav-link py-2 text-zinc-200 hover:text-ki-cyan">Início</a>
                 <a href="#estilos"
-                    class="mobile-nav-link py-2 text-zinc-300 hover:text-gold-400">Estilos</a>
+                    class="mobile-nav-link py-2 text-zinc-200 hover:text-ki-cyan">Estilos
+                    Anime</a>
                 <a href="#galeria"
-                    class="mobile-nav-link py-2 text-zinc-300 hover:text-gold-400">Galeria</a>
+                    class="mobile-nav-link py-2 text-zinc-200 hover:text-ki-cyan">Galeria
+                    Geek</a>
                 <a href="#cuidados"
-                    class="mobile-nav-link py-2 text-zinc-300 hover:text-gold-400">Cuidados</a>
+                    class="mobile-nav-link py-2 text-zinc-200 hover:text-ki-cyan">Guia
+                    Guerreiro(a)</a>
                 <a href="#orcamento"
-                    class="mobile-nav-link py-2 text-zinc-300 hover:text-gold-400">Orçamento</a>
+                    class="mobile-nav-link py-2 text-cosmo-gold hover:text-white font-bold">Orçamento
+                    Saiya-jin</a>
                 <a href="https://www.instagram.com/enoquebtattoo_/"
                     target="_blank"
-                    class="py-3 text-gold-400 flex items-center justify-center gap-2 border border-gold-500/40 rounded-lg">
-                    <i class="fa-brands fa-instagram"></i> Instagram Oficial
+                    class="py-3 text-ki-cyan flex items-center justify-center gap-2 border border-ki-cyan/40 rounded-lg">
+                    <i class="fa-brands fa-instagram"></i> Feed @enoquebtattoo_
                 </a>
             </div>
         </header>
 
         <!-- HERO SECTION -->
         <section id="home"
-            class="relative min-h-screen flex items-center justify-center pt-24 pb-16  overflow-hidden">
-            <!-- Radial Ambient Lights -->
-            <div
-                class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gold-500/10 rounded-full blur-[4px] pointer-events-none">
-                <div class="video-bg-container">
-                    <video
-                        class="video-bg-element"
-                        autoplay
-                        loop
-                        muted
-                        playsinline
-                        poster="https://storage.coverr.co/t/p00abr6GU488mPR01MSQH3KW26uwRHLQsh"
-                        preload="metadata">
-                        <source
-                            src="https://cdn.beacons.ai/user_content/HcrECk1wUvWNk26G2otF5Dzk17G3/backgrounds/home/video_background_enoquebarbosa.mp4?t=1664464690793"
-                            type="video/mp4">
-                    </video>
-                    <div class="video-bg-overlay"></div>
-                </div>
+            class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden z-10">
+            <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
 
-            </div>
-            <div
-                class="absolute bottom-10 left-10 w-72 h-72 bg-zinc-800/20 rounded-full blur-[100px] pointer-events-none"></div>
-
-            <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+                <!-- Scouter HUD Badge -->
                 <h1
-                    class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+                    class="font-cinzelDeco py-8 text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
                     ELEVE SEU COSMO NA PELE <br />
-                    <span class="gold-gradient-text uppercase">SUPERE SEUS
+                    <span class="gold-cosmo-text uppercase">SUPERE SEUS
                         LIMITES</span> EM CADA TRAÇO
                 </h1>
 
                 <p
-                    class="max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg mb-10 font-light leading-relaxed">
+                    class="max-w-3xl mx-auto text-zinc-300 text-sm sm:text-base mb-10 font-light leading-relaxed font-sans">
                     Tatuagens autorais inspiradas nos maiores clássicos do
                     universo Geek &amp; Anime. Especialista em traços finos
                     estilo Mangá, auras em degradê vibrante de <strong>Dragon
@@ -146,82 +271,85 @@
                 </p>
 
                 <div
-                    class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    class="flex flex-col sm:flex-row items-center justify-center gap-5">
                     <a href="#orcamento"
-                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-semibold text-sm tracking-widest uppercase transition-all duration-300 shadow-lg shadow-gold-500/20 flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <span>Solicitar Orçamento</span>
+                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cosmo-gold to-ki-orange hover:from-ki-orange hover:to-cosmo-gold text-black font-orbitron font-extrabold text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.4)] flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-meteor text-base"></i>
+                        <span>Orçamento</span>
                     </a>
                     <a href="#galeria"
-                        class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white hover:text-gold-400 border border-zinc-800 hover:border-gold-500/40 text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-compass"></i>
+                        class="w-full sm:w-auto px-8 py-4 rounded-xl scouter-box text-ki-cyan hover:text-white border border-ki-cyan/50 text-xs font-orbitron font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-shield-halved"></i>
                         <span>Ver Galeria</span>
                     </a>
                 </div>
 
-                <!-- Stats/Highlights Banner -->
+                <!-- Stats/Anime Attributes Grid -->
                 <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-zinc-800/60 max-w-4xl mx-auto">
-                    <div class="text-center">
+                    class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-ki-cyan/20 max-w-4xl mx-auto">
+                    <div class="p-4 scouter-box text-center">
                         <span
-                            class="block font-cinzel text-3xl font-bold text-white">100%</span>
+                            class="block font-orbitron text-2xl font-black text-cosmo-gold">100%</span>
                         <span
-                            class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Materiais
-                            Descartáveis</span>
+                            class="text-[10px] text-zinc-400 font-mono uppercase tracking-widest mt-1">Traço
+                            Estilo Mangá</span>
                     </div>
-                    <div class="text-center">
+                    <div class="p-4 scouter-box text-center">
                         <span
-                            class="block font-cinzel text-3xl font-bold text-gold-400">Exclusivo</span>
+                            class="block font-orbitron text-2xl font-black text-ki-cyan">Ki
+                            Aura</span>
                         <span
-                            class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Desenho
-                            Autoral</span>
+                            class="text-[10px] text-zinc-400 font-mono uppercase tracking-widest mt-1">Cores
+                            Vibrantes</span>
                     </div>
-                    <div class="text-center">
+                    <div class="p-4 scouter-box text-center">
                         <span
-                            class="block font-cinzel text-3xl font-bold text-white">Segurança</span>
+                            class="block font-orbitron text-2xl font-black text-cosmo-gold">Armadura
+                            Ouro</span>
                         <span
-                            class="text-xs text-zinc-500 uppercase tracking-widest mt-1">normas
-                            EU
-                            REACH de qualidade</span>
+                            class="text-[10px] text-zinc-400 font-mono uppercase tracking-widest mt-1">Sombras
+                            Metálicas</span>
                     </div>
-                    <div class="text-center">
+                    <div class="p-4 scouter-box text-center">
                         <span
-                            class="block font-cinzel text-3xl font-bold text-gold-400">Atendimento</span>
+                            class="block font-orbitron text-2xl font-black text-ki-cyan">Sementes
+                            dos Deuses</span>
                         <span
-                            class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Com
-                            Hora Marcada</span>
+                            class="text-[10px] text-zinc-400 font-mono uppercase tracking-widest mt-1">Biossegurança
+                            100%</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT SECTION (SOBRE) -->
+        <!-- ABOUT ARTIST SECTION -->
         <section id="sobre"
-            class="py-24 bg-dark-900 border-t border-zinc-800/60 relative">
+            class="py-24 bg-animeDark-900/90 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-6xl mx-auto px-6">
                 <div
                     class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <!-- Artist Visual Showcase -->
+                    <!-- Artist Visual Showcase with Scouter HUD Overlay -->
                     <div class="lg:col-span-5 relative">
-                        <div
-                            class="relative rounded-2xl overflow-hidden border border-zinc-800 glass-panel p-2">
-                            <img
-                                src="https://images.unsplash.com/photo-1704345911815-5d9aa04aeb80?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-                                alt="Enoque B. Tattoo Artist em estúdio"
-                                class="w-full h-[450px] object-cover rounded-xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
-                        </div>
-                        <!-- Overlay Badge -->
-                        <div
-                            class="absolute -bottom-6 -right-4 glass-panel border border-gold-500/40 p-4 rounded-xl shadow-xl flex items-center gap-3">
+                        <div class="scouter-box-gold p-3 relative rounded-2xl">
+                            <!-- Target HUD UI corner brackets -->
                             <div
-                                class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xl">
-                                <i class="fa-solid fa-certificate"></i>
-                            </div>
-                            <div>
+                                class="absolute top-2 left-2 text-cosmo-gold text-xs font-mono">┌
+                                HUD_TARGET</div>
+                            <div
+                                class="absolute top-2 right-2 text-cosmo-gold text-xs font-mono">100%
+                                MATCH ┐</div>
+                            <img
+                                src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80"
+                                alt="Enoque B. Tattoo Artist Anime Specialist"
+                                class="w-full h-[450px] object-cover rounded-xl contrast-125 filter hue-rotate-15">
+                            <div
+                                class="absolute bottom-4 left-4 right-4 bg-animeDark-950/90 border border-cosmo-gold/40 p-3 rounded-xl flex items-center justify-between">
                                 <span
-                                    class="block text-xs font-semibold text-white">Biossegurança</span>
-                                <span class="text-[11px] text-zinc-400">Padrão
-                                    Internacional</span>
+                                    class="text-xs font-orbitron text-cosmo-gold">MESTRE
+                                    TATUADOR</span>
+                                <span
+                                    class="text-[10px] font-mono text-ki-cyan">RANK:
+                                    GOLD SAINT / Saiya-jin GOD</span>
                             </div>
                         </div>
                     </div>
@@ -229,51 +357,52 @@
                     <!-- Artist Bio Content -->
                     <div class="lg:col-span-7 space-y-6">
                         <div
-                            class="inline-block text-xs font-semibold text-gold-400 tracking-[0.3em] uppercase">O
-                            Artista</div>
+                            class="inline-flex items-center gap-2 text-xs font-mono font-bold text-cosmo-gold tracking-widest uppercase">
+                            <i class="fa-solid fa-scroll"></i> Histórico do
+                            Guerreiro
+                        </div>
                         <h2
-                            class="font-cinzel text-3xl sm:text-4xl font-bold text-white">Enoque
+                            class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white">Enoque
                             B. Tattoo</h2>
                         <p
-                            class="text-zinc-400 leading-relaxed font-light text-base">
-                            Com anos de dedicação à arte corporal, Enoque B.
-                            transformou a paixão por traços e sombras em um
-                            conceito autoral de tatuagem. Cada projeto nasce de
-                            um estudo minucioso da anatomia e da história
-                            trazida pelo cliente.
+                            class="text-zinc-300 leading-relaxed font-light text-sm sm:text-base font-sans">
+                            Especializado em imortalizar a paixão por animes,
+                            quadrinhos e games na pele. Desenvolvo projetos
+                            exclusivos inspirados no dinamismo de <strong>Dragon
+                                Ball Z</strong>, nas constelações reluzentes dos
+                            <strong>Cavaleiros do Zodíaco</strong>,
+                            <strong>Kuroko no Basket</strong>, <strong>Hunter x
+                                Hunter</strong> e grandes sagas nerds.
                         </p>
                         <p
-                            class="text-zinc-400 leading-relaxed font-light text-base">
-                            Especializado em <strong>Anime</strong>,
-                            <strong>Geek</strong> e
-                            <strong>Realismo</strong>, o trabalho é pautado
-                            pela altíssima precisão, durabilidade dos pigmentos
-                            e um ambiente de estúdio acolhedor e seguro.
+                            class="text-zinc-300 leading-relaxed font-light text-sm sm:text-base font-sans">
+                            Cada traço é trabalhado como uma página de mangá
+                            autêntica: hachuras precisas, aplicação de pretos
+                            intensos e degradês de auras de energia Ki
+                            vibrantes.
                         </p>
 
                         <!-- Features Grid -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                            <div
-                                class="p-4 rounded-xl bg-dark-800/60 border border-zinc-800/80">
+                            <div class="p-4 scouter-box">
                                 <i
-                                    class="fa-solid fa-pen-nib text-gold-400 text-xl mb-2"></i>
+                                    class="fa-solid fa-wand-magic-sparkles text-ki-cyan text-2xl mb-2"></i>
                                 <h4
-                                    class="font-cinzel font-semibold text-white text-sm">Criação
-                                    Exclusiva</h4>
-                                <p class="text-xs text-zinc-400 mt-1">Nada de
-                                    cópias. Cada arte é desenvolvida unicamente
-                                    para você.</p>
+                                    class="font-orbitron font-semibold text-white text-sm">Design
+                                    100% Autoral</h4>
+                                <p class="text-xs text-zinc-400 mt-1">Criação
+                                    exclusiva baseada nas suas cenas e mangás
+                                    favoritos.</p>
                             </div>
-                            <div
-                                class="p-4 rounded-xl bg-dark-800/60 border border-zinc-800/80">
+                            <div class="p-4 scouter-box">
                                 <i
-                                    class="fa-solid fa-shield-virus text-gold-400 text-xl mb-2"></i>
+                                    class="fa-solid fa-shield-cat text-cosmo-gold text-2xl mb-2"></i>
                                 <h4
-                                    class="font-cinzel font-semibold text-white text-sm">Higiene
-                                    Absoluta</h4>
+                                    class="font-orbitron font-semibold text-white text-sm">Higiene
+                                    Nível Semente dos Deuses</h4>
                                 <p class="text-xs text-zinc-400 mt-1">Insumos
-                                    100% descartáveis e agulhas registradas pela
-                                    norma EU REACH</p>
+                                    100% descartáveis e ambiente asséptico
+                                    certificado.</p>
                             </div>
                         </div>
                     </div>
@@ -281,89 +410,123 @@
             </div>
         </section>
 
-        <!-- STYLES SECTION (ESTILOS) -->
+        <!-- ANIME & GEEK STYLES SECTION -->
         <section id="estilos"
-            class="py-24 bg-dark-950 border-t border-zinc-800/60 relative">
+            class="py-24 bg-animeDark-950 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <span
-                        class="text-xs font-semibold text-gold-400 tracking-[0.3em] uppercase">Especialidades</span>
+                        class="text-xs font-mono font-semibold text-ki-cyan tracking-[0.3em] uppercase">Especialidades
+                        Geek</span>
                     <h2
-                        class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Estilos
-                        de Tatuagem</h2>
+                        class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white mt-2">Estilos
+                        Anime &amp; Manga</h2>
                     <p class="text-zinc-400 text-sm mt-3 font-light">Técnicas
-                        aprimoradas para transformar suas ideias em obras
-                        duradouras.</p>
+                        desenvolvidas para capturar a essência da animação
+                        japonesa.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Style Card 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Style Card 1: Manga Ink & Blackwork -->
                     <div
-                        class="group relative rounded-2xl overflow-hidden glass-panel border border-zinc-800 hover:border-gold-500/50 transition-all duration-500">
-                        <div class="h-64 overflow-hidden relative">
-                            <img
-                                src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=600&q=80"
-                                alt="Fine Line Tattoo"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent"></div>
-                        </div>
-                        <div class="p-6 relative -mt-12">
-                            <h3
-                                class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Fine
-                                Line</h3>
-                            <p
-                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Agulhas ultra-finas para traços delicados,
-                                minimalistas e de alta precisão estética. ideal
-                                para escrita e micro-detalhes.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Style Card 2 -->
-                    <div
-                        class="group relative rounded-2xl overflow-hidden glass-panel border border-zinc-800 hover:border-gold-500/50 transition-all duration-500">
-                        <div class="h-64 overflow-hidden relative">
+                        class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-cyan transition-all duration-500">
+                        <div class="h-60 overflow-hidden relative">
                             <img
                                 src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=80"
-                                alt="Blackwork Tattoo"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale">
+                                alt="Mangá Blackwork Tattoo"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 contrast-125">
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent"></div>
+                                class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
                         </div>
-                        <div class="p-6 relative -mt-12">
+                        <div class="p-5 relative -mt-10">
+                            <span
+                                class="text-[10px] font-mono text-ki-cyan uppercase tracking-widest">DRAGON
+                                BALL / SHONEN</span>
                             <h3
-                                class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Blackwork
-                                &amp; Dotwork</h3>
+                                class="font-orbitron text-base font-bold text-white group-hover:text-ki-cyan transition-colors">Mangá
+                                &amp; Hachuras</h3>
                             <p
                                 class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Uso marcante do preto denso, hachuras e
-                                pontilhismo. Composições geométricas, botânicas
-                                e de alto impacto visual.
+                                Preto denso e linhas duplas inspiradas nos
+                                traços originais dos quadrinhos japoneses.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Style Card 3 -->
+                    <!-- Style Card 2: Fine Line Anime -->
                     <div
-                        class="group relative rounded-2xl overflow-hidden glass-panel border border-zinc-800 hover:border-gold-500/50 transition-all duration-500">
-                        <div class="h-64 overflow-hidden relative">
+                        class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-cyan transition-all duration-500">
+                        <div class="h-60 overflow-hidden relative">
                             <img
-                                src="https://images.unsplash.com/photo-1775135436883-56af5c10a476?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-                                alt="Microrealismo Tattoo"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale">
+                                src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=600&q=80"
+                                alt="Fine Line Anime Tattoo"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent"></div>
+                                class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
                         </div>
-                        <div class="p-6 relative -mt-12">
+                        <div class="p-5 relative -mt-10">
+                            <span
+                                class="text-[10px] font-mono text-cosmo-gold uppercase tracking-widest">MINIMALISTA
+                                GEEK</span>
                             <h3
-                                class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Microrealismo</h3>
+                                class="font-orbitron text-base font-bold text-white group-hover:text-cosmo-gold transition-colors">Fine
+                                Line Anime</h3>
                             <p
                                 class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Reprodução fiel de retratos, animais ou fotos
-                                icônicas em dimensões reduzidas com rica
-                                gradação de cinzas.
+                                Traços ultrafinos para símbolos geek, runas,
+                                frases em kanji e silhuetas delicadas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Style Card 3: Saint Seiya Gold Realism -->
+                    <div
+                        class="group relative rounded-2xl overflow-hidden scouter-box hover:border-cosmo-gold transition-all duration-500">
+                        <div class="h-60 overflow-hidden relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1590246814884-570aafd227b9?auto=format&fit=crop&w=600&q=80"
+                                alt="Armaduras de Ouro Tattoo"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
+                        </div>
+                        <div class="p-5 relative -mt-10">
+                            <span
+                                class="text-[10px] font-mono text-cosmo-gold uppercase tracking-widest">CAVALEIROS
+                                DO ZODÍACO</span>
+                            <h3
+                                class="font-orbitron text-base font-bold text-white group-hover:text-cosmo-gold transition-colors">Gold
+                                Cloth Realism</h3>
+                            <p
+                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                Efeito metálico reluzente e degradê preto/cinza
+                                simulando armaduras de ouro dos Cavaleiros.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Style Card 4: Saiya-jin Ki Color & Neon -->
+                    <div
+                        class="group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-orange transition-all duration-500">
+                        <div class="h-60 overflow-hidden relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1550684848-acc19240409a?auto=format&fit=crop&w=600&q=80"
+                                alt="Super Saiya-jin Ki Color Tattoo"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/40 to-transparent"></div>
+                        </div>
+                        <div class="p-5 relative -mt-10">
+                            <span
+                                class="text-[10px] font-mono text-ki-orange uppercase tracking-widest">SUPER
+                                Saiya-jin / NEON</span>
+                            <h3
+                                class="font-orbitron text-base font-bold text-white group-hover:text-ki-orange transition-colors">Ki
+                                Energy Colors</h3>
+                            <p
+                                class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                                Pigmentação de alta intensidade para auras de
+                                energia Super Saiya-jin, Kamehameha e fogo.
                             </p>
                         </div>
                     </div>
@@ -371,9 +534,9 @@
             </div>
         </section>
 
-        <!-- GALLERY & INSTAGRAM INTEGRATION SECTION -->
+        <!-- GALLERY & INSTAGRAM FEED INTEGRATION -->
         <section id="galeria"
-            class="py-24 bg-dark-900 border-t border-zinc-800/60 relative">
+            class="py-24 bg-animeDark-900/90 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-7xl mx-auto px-6">
                 <!-- Section Header -->
                 <div
@@ -381,300 +544,286 @@
                     <div>
                         <div class="flex items-center gap-3">
                             <span
-                                class="text-xs font-semibold text-gold-400 tracking-[0.3em] uppercase">Portfólio</span>
+                                class="text-xs font-mono font-semibold text-cosmo-gold tracking-[0.3em] uppercase">Galeria
+                                Geek</span>
                             <span id="api-status-badge"
-                                class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800/50">
-                                Modo Portfólio Local
+                                class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-ki-cyan/20 text-ki-cyan border border-ki-cyan/40">
+                                MODO PORTFÓLIO LOCAL ANIME
                             </span>
                         </div>
                         <h2
-                            class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Galeria
-                            de Trabalhos</h2>
+                            class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white mt-2">Trabalhos
+                            em Destaque</h2>
                     </div>
 
                     <!-- Category Filters & Instagram Config Toggle -->
                     <div class="flex flex-wrap items-center gap-3">
                         <div
-                            class="inline-flex p-1 rounded-xl bg-dark-800 border border-zinc-800 text-xs font-medium">
+                            class="inline-flex p-1 rounded-xl bg-animeDark-950 border border-ki-cyan/30 text-xs font-orbitron">
                             <button
-                                class="filter-btn active px-4 py-2 rounded-lg bg-gold-500 text-black transition-all"
+                                class="filter-btn active px-4 py-2 rounded-lg bg-ki-cyan text-black font-bold transition-all"
                                 data-filter="all">Todos</button>
                             <button
                                 class="filter-btn px-4 py-2 rounded-lg text-zinc-400 hover:text-white transition-all"
-                                data-filter="fineline">Fine Line</button>
+                                data-filter="dragonball">Dragon Ball</button>
                             <button
                                 class="filter-btn px-4 py-2 rounded-lg text-zinc-400 hover:text-white transition-all"
-                                data-filter="blackwork">Blackwork</button>
+                                data-filter="cdz">Cavaleiros Zodíaco</button>
                             <button
                                 class="filter-btn px-4 py-2 rounded-lg text-zinc-400 hover:text-white transition-all"
-                                data-filter="realismo">Realismo</button>
+                                data-filter="shonen">Outros Animes</button>
                         </div>
 
                         <button id="toggle-api-drawer-btn"
-                            class="px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 text-xs text-zinc-200 transition-colors flex items-center gap-2">
-                            <i class="fa-brands fa-instagram text-gold-400"></i>
-                            <span>Conectar Token IG</span>
+                            class="px-4 py-2 rounded-xl border border-cosmo-gold/40 bg-cosmo-gold/10 hover:bg-cosmo-gold hover:text-black text-xs font-orbitron text-cosmo-gold transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>Token IG Live</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Instagram API Dynamic Drawer / Setup Box -->
+                <!-- Instagram API Dynamic Drawer -->
                 <div id="api-config-drawer"
-                    class="hidden mb-12 p-6 rounded-2xl glass-panel border border-gold-500/30 bg-black/60 transition-all">
+                    class="hidden mb-12 p-6 scouter-box-gold transition-all">
                     <div
                         class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-zinc-800">
                         <div>
                             <h4
-                                class="font-cinzel text-lg font-bold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-key text-gold-400"></i>
+                                class="font-orbitron text-base font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-cosmo-gold"></i>
                                 Conexão Direta Instagram Graph API
                             </h4>
-                            <p class="text-xs text-zinc-400 mt-1">
-                                Insira o Access Token do perfil <strong
-                                    class="text-gold-400">@enoquebtattoo_</strong>
-                                para sincronizar as últimas fotos diretamente do
-                                feed.
+                            <p class="text-xs text-zinc-300 mt-1">
+                                Insira o Access Token da conta <strong
+                                    class="text-cosmo-gold">@enoquebtattoo_</strong>
+                                para puxar os posts do Instagram em tempo real.
                             </p>
                         </div>
-                        <a
-                            href="https://developers.facebook.com/docs/instagram-basic-display-api"
-                            target="_blank"
-                            class="text-xs text-gold-400 underline hover:text-gold-300">
-                            Como gerar o token?
-                        </a>
                     </div>
 
                     <div class="mt-4 flex flex-col sm:flex-row gap-3">
                         <input type="text" id="instagram-token-input"
-                            placeholder="Cole aqui seu IG_ACCESS_TOKEN (ex: IGQVJ...)"
-                            class="flex-1 bg-dark-950 border border-zinc-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-gold-500 font-mono">
+                            placeholder="Cole aqui seu IG_ACCESS_TOKEN..."
+                            class="flex-1 bg-animeDark-950 border border-ki-cyan/40 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cosmo-gold font-mono">
 
                         <button id="btn-fetch-instagram"
-                            class="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-black font-semibold text-xs rounded-xl transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-rotate"></i> Carregar Feed
-                            Live
+                            class="px-6 py-3 bg-cosmo-gold hover:bg-yellow-400 text-black font-orbitron font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-arrows-rotate"></i> Carregar
+                            Feed IG
                         </button>
                         <button id="btn-reset-instagram"
-                            class="px-4 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-medium text-xs rounded-xl transition-all">
-                            Restaurar Padrão
+                            class="px-4 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-orbitron text-xs rounded-xl transition-all">
+                            Resetar
                         </button>
                     </div>
                     <div id="api-feedback-msg"
-                        class="text-xs mt-3 hidden"></div>
+                        class="text-xs font-mono mt-3 hidden"></div>
                 </div>
 
                 <!-- GALLERY GRID -->
                 <div id="gallery-grid"
                     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Gallery Item cards rendered via JS -->
+                    <!-- Gallery items injected dynamically by JS -->
                 </div>
             </div>
         </section>
 
-        <!-- LIGHTBOX MODAL -->
+        <!-- SCOUTER HUD LIGHTBOX MODAL -->
         <div id="lightbox-modal"
             class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
             <button id="close-lightbox"
-                class="absolute top-6 right-6 text-zinc-400 hover:text-white text-3xl focus:outline-none z-50">
+                class="absolute top-6 right-6 text-ki-cyan hover:text-white text-3xl focus:outline-none z-50">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div
-                class="max-w-4xl w-full glass-panel border border-zinc-800 rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 max-h-[90vh]">
+                class="max-w-4xl w-full scouter-box-gold rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 max-h-[90vh]">
                 <div
                     class="bg-black flex items-center justify-center relative min-h-[300px]">
                     <img id="lightbox-img" src alt="Tattoo Portfolio Detail"
                         class="max-h-[80vh] w-full object-contain">
+                    <!-- HUD Targeting Grid Overlay -->
+                    <div
+                        class="absolute top-4 left-4 text-[10px] font-mono text-ki-cyan">TARGET:
+                        SELECTED</div>
+                    <div
+                        class="absolute bottom-4 right-4 text-[10px] font-mono text-cosmo-gold">ANALYSIS:
+                        100% COMPLETE</div>
                 </div>
-                <div class="p-8 flex flex-col justify-between overflow-y-auto">
+                <div
+                    class="p-8 flex flex-col justify-between overflow-y-auto bg-animeDark-900">
                     <div>
                         <div
                             class="flex items-center justify-between gap-2 mb-4">
                             <span id="lightbox-tag"
-                                class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 border border-gold-500/30 text-xs font-semibold uppercase tracking-wider">
-                                Style Tag
+                                class="px-3 py-1 rounded bg-ki-cyan/20 text-ki-cyan border border-ki-cyan/40 text-xs font-mono font-bold uppercase">
+                                Anime Tag
                             </span>
                             <span id="lightbox-date"
-                                class="text-xs text-zinc-500">Recente</span>
+                                class="text-xs font-mono text-zinc-400">Poder de
+                                Luta: High</span>
                         </div>
                         <h3 id="lightbox-title"
-                            class="font-cinzel text-2xl font-bold text-white mb-3">Nome
-                            da Arte</h3>
+                            class="font-orbitron text-xl font-bold text-white mb-3">Nome
+                            da Arte Anime</h3>
                         <p id="lightbox-desc"
                             class="text-zinc-300 text-sm leading-relaxed mb-6 font-light">
-                            Descrição e detalhes do trabalho.
+                            Descrição da tatuagem geek.
                         </p>
                     </div>
 
                     <div
-                        class="pt-6 border-t border-zinc-800 flex flex-col gap-3">
+                        class="pt-6 border-t border-ki-cyan/20 flex flex-col gap-3">
                         <a id="lightbox-ig-link"
                             href="https://www.instagram.com/enoquebtattoo_/"
                             target="_blank"
-                            class="w-full py-3 rounded-xl border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-colors">
-                            <i
-                                class="fa-brands fa-instagram text-gold-400 text-base"></i>
-                            Ver no Instagram @enoquebtattoo_
+                            class="w-full py-3 rounded-xl border border-ki-cyan/40 bg-ki-cyan/10 hover:bg-ki-cyan hover:text-black text-ki-cyan text-xs font-orbitron font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-brands fa-instagram text-base"></i> Ver
+                            no Instagram @enoquebtattoo_
                         </a>
                         <a href="#orcamento" onclick="closeLightboxModal()"
-                            class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-black text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-solid fa-comment-dots"></i> Quero uma
-                            Arte Parecida
+                            class="w-full py-3 rounded-xl bg-gradient-to-r from-cosmo-gold to-ki-orange text-black font-orbitron font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-solid fa-dragon"></i> Quero Tatuar esse
+                            Tema
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- CARE & FAQ SECTION (CUIDADOS) -->
+        <!-- WARRIOR CARE GUIDE SECTION (GUIA DO Guerreiro(a)) -->
         <section id="cuidados"
-            class="py-24 bg-dark-950 border-t border-zinc-800/60 relative">
+            class="py-24 bg-animeDark-950 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <span
-                        class="text-xs font-semibold text-gold-400 tracking-[0.3em] uppercase">Guia
-                        Completo</span>
+                        class="text-xs font-mono font-semibold text-cosmo-gold tracking-[0.3em] uppercase">Manual
+                        de Treinamento</span>
                     <h2
-                        class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Cuidados
-                        &amp; Dúvidas Frequentes</h2>
-                    <p class="text-zinc-400 text-sm mt-2 font-light">Tudo o que
-                        você precisa saber para a melhor cicatrização da sua
-                        tatuagem.</p>
+                        class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white mt-2">Guia
+                        do Guerreiro(a) &amp; Cuidados</h2>
+                    <p class="text-zinc-400 text-sm mt-2 font-light">Preparação
+                        e cicatrização dignas de um Cavaleiro de Ouro ou Super
+                        Saiya-jin.</p>
                 </div>
 
                 <div class="space-y-4">
                     <!-- Accordion 1 -->
-                    <div
-                        class="border border-zinc-800 rounded-xl bg-dark-900 overflow-hidden">
+                    <div class="scouter-box rounded-xl overflow-hidden">
                         <button
-                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-cinzel font-semibold hover:text-gold-400 transition-colors">
-                            <span>1. Como se preparar para o dia da
-                                sessão?</span>
+                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-orbitron font-semibold hover:text-ki-cyan transition-colors">
+                            <span class="flex items-center gap-3">
+                                1. Sala do Tempo (Preparação Pré-Sessão)
+                            </span>
                             <i
-                                class="fa-solid fa-chevron-down text-zinc-500 transition-transform duration-300"></i>
+                                class="fa-solid fa-chevron-down text-ki-cyan transition-transform duration-300"></i>
                         </button>
                         <div
-                            class="faq-content hidden px-6 pb-6 text-zinc-400 text-sm font-light leading-relaxed border-t border-zinc-800/50 pt-4">
-                            Evite consumir bebidas alcoólicas nas 24h
-                            anteriores. Durma bem, alimente-se adequadamente
-                            antes de vir ao estúdio e mantenha a pele bem
-                            hidratada nos dias que antecedem.
+                            class="faq-content hidden px-6 pb-6 text-zinc-300 text-sm font-light leading-relaxed border-t border-ki-cyan/20 pt-4 font-sans">
+                            Esteja bem descansado e bem alimentado. Hidrate a
+                            pele nos dias anteriores. Evite bebidas alcoólicas
+                            nas 24h que antecedem a tattoo para manter o fluxo
+                            de sangue estabilizado.
                         </div>
                     </div>
 
                     <!-- Accordion 2 -->
-                    <div
-                        class="border border-zinc-800 rounded-xl bg-dark-900 overflow-hidden">
+                    <div class="scouter-box rounded-xl overflow-hidden">
                         <button
-                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-cinzel font-semibold hover:text-gold-400 transition-colors">
-                            <span>2. Cuidados pós-tatuagem (Primeiros 15
-                                dias)</span>
+                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-orbitron font-semibold hover:text-ki-cyan transition-colors">
+                            <span class="flex items-center gap-3">
+                                2. Efeito Semente dos Deuses (Cicatrização
+                                Pós-Tattoo)
+                            </span>
                             <i
-                                class="fa-solid fa-chevron-down text-zinc-500 transition-transform duration-300"></i>
+                                class="fa-solid fa-chevron-down text-ki-cyan transition-transform duration-300"></i>
                         </button>
                         <div
-                            class="faq-content hidden px-6 pb-6 text-zinc-400 text-sm font-light leading-relaxed border-t border-zinc-800/50 pt-4">
-                            Utilize o filme protetor/pomada conforme instruído
-                            por Enoque. Lave com sabonete neutro, não remova as
-                            casquinhas e evite sol direto, mar, piscina e sauna
-                            durante a cicatrização.
+                            class="faq-content hidden px-6 pb-6 text-zinc-300 text-sm font-light leading-relaxed border-t border-ki-cyan/20 pt-4 font-sans">
+                            Lave delicadamente com sabonete neutro, aplique a
+                            pomada recomendada por Enoque e não remova as
+                            casquinhas. Evite exposição solar direta, praias,
+                            piscinas e saunas durante 15 dias.
                         </div>
                     </div>
 
                     <!-- Accordion 3 -->
-                    <div
-                        class="border border-zinc-800 rounded-xl bg-dark-900 overflow-hidden">
+                    <div class="scouter-box rounded-xl overflow-hidden">
                         <button
-                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-cinzel font-semibold hover:text-gold-400 transition-colors">
-                            <span>3. Como funciona a criação da arte?</span>
+                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-orbitron font-semibold hover:text-ki-cyan transition-colors">
+                            <span class="flex items-center gap-3">
+                                3. Como é criada a Arte Autoral do seu Anime
+                                Preferido?
+                            </span>
                             <i
-                                class="fa-solid fa-chevron-down text-zinc-500 transition-transform duration-300"></i>
+                                class="fa-solid fa-chevron-down text-ki-cyan transition-transform duration-300"></i>
                         </button>
                         <div
-                            class="faq-content hidden px-6 pb-6 text-zinc-400 text-sm font-light leading-relaxed border-t border-zinc-800/50 pt-4">
-                            Após a confirmação do agendamento, elaboramos o
-                            desenho personalizado com base nas suas referências.
-                            O projeto final é apresentado e ajustado no dia da
-                            sessão direto no estúdio.
-                        </div>
-                    </div>
-
-                    <!-- Accordion 4 -->
-                    <div
-                        class="border border-zinc-800 rounded-xl bg-dark-900 overflow-hidden">
-                        <button
-                            class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between text-white font-cinzel font-semibold hover:text-gold-400 transition-colors">
-                            <span>4. Formas de pagamento e agendamento</span>
-                            <i
-                                class="fa-solid fa-chevron-down text-zinc-500 transition-transform duration-300"></i>
-                        </button>
-                        <div
-                            class="faq-content hidden px-6 pb-6 text-zinc-400 text-sm font-light leading-relaxed border-t border-zinc-800/50 pt-4">
-                            Aceitamos PIX, cartões de crédito/débito. O
-                            agendamento é efetuado mediante sinal de reserva que
-                            é abatido do valor final da tatuagem.
+                            class="faq-content hidden px-6 pb-6 text-zinc-300 text-sm font-light leading-relaxed border-t border-ki-cyan/20 pt-4 font-sans">
+                            Você envia suas cenas, personagens e mangás
+                            favoritos no orçamento. Enoque B. redesenha com
+                            elementos anatômicos e composição exclusiva adaptada
+                            perfeitamente ao seu corpo.
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT / BUDGET SECTION (ORÇAMENTO) -->
+        <!-- Saiya-jin BUDGET CALCULATOR / WHATSAPP FORM -->
         <section id="orcamento"
-            class="py-24 bg-dark-900 border-t border-zinc-800/60 relative">
+            class="py-24 bg-animeDark-900/90 border-t border-ki-cyan/20 relative z-10">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     <!-- Info Column -->
                     <div class="lg:col-span-5 space-y-6">
                         <span
-                            class="text-xs font-semibold text-gold-400 tracking-[0.3em] uppercase">Agendamento</span>
+                            class="text-xs font-mono font-semibold text-cosmo-gold tracking-[0.3em] uppercase">Agendamento</span>
                         <h2
-                            class="font-cinzel text-3xl sm:text-4xl font-bold text-white">Solicite
+                            class="font-cinzelDeco text-2xl sm:text-4xl font-bold text-white">Solicite
                             Seu Orçamento</h2>
                         <p
-                            class="text-zinc-400 text-sm leading-relaxed font-light">
-                            Preencha o formulário interativo ao lado com os
-                            detalhes da sua ideia. Ao final, o sistema irá gerar
-                            uma mensagem estruturada no WhatsApp oficial de
-                            <strong>Enoque B. Tattoo</strong>.
+                            class="text-zinc-300 text-sm leading-relaxed font-light font-sans">
+                            Preencha o formulário e calcule o nível de energia
+                            do seu projeto. O formulário gera uma mensagem
+                            direta no WhatsApp de <strong>Enoque B.
+                                Tattoo</strong>.
                         </p>
 
                         <div class="space-y-4 pt-4">
                             <div class="flex items-center gap-4 text-zinc-300">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center border border-gold-500/20">
+                                    class="w-10 h-10 rounded-xl bg-ki-cyan/10 text-ki-cyan flex items-center justify-center border border-ki-cyan/40">
                                     <i
                                         class="fa-brands fa-whatsapp text-xl"></i>
                                 </div>
                                 <div>
                                     <span
-                                        class="block text-xs text-zinc-500 uppercase font-medium">WhatsApp
+                                        class="block text-xs font-mono text-zinc-400 uppercase">WhatsApp
                                         Direto</span>
                                     <span
-                                        class="text-sm font-semibold text-white">
-                                        +351939429702</span>
+                                        class="text-sm font-orbitron text-white">+351
+                                        939 429 702
+                                    </span>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-4 text-zinc-300">
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center border border-gold-500/20">
-                                    <a
-                                        href="https://maps.app.goo.gl/DFi4U2uGoVVk1GLZ7"
-                                        target="_blank">
-                                        <i
-                                            class="fa-solid fa-location-dot text-lg"></i>
-                                    </a>
+                                    class="w-10 h-10 rounded-xl bg-cosmo-gold/10 text-cosmo-gold flex items-center justify-center border border-cosmo-gold/40">
+                                    <i
+                                        class="fa-solid fa-location-dot text-lg"></i>
                                 </div>
                                 <div>
                                     <a
                                         href="https://maps.app.goo.gl/DFi4U2uGoVVk1GLZ7"
                                         target="_blank">
                                         <span
-                                            class="block text-xs text-zinc-500 uppercase font-medium">Estúdio
-                                            Atendimento</span>
+                                            class="block text-xs font-mono text-zinc-400 uppercase">Estúdio
+                                            Atendimento
+                                        </span>
                                         <span
-                                            class="text-sm font-semibold text-white">
-                                            INK COLLECTIVE TATTOO
+                                            class="text-sm font-orbitron text-white">INK
+                                            COLLECTIVE TATTOO
                                         </span>
                                     </a>
                                 </div>
@@ -682,88 +831,111 @@
                         </div>
                     </div>
 
-                    <!-- Interactive Form Column -->
+                    <!-- Form Column -->
                     <div class="lg:col-span-7">
                         <form id="quote-form"
-                            class="glass-panel p-8 rounded-2xl border border-zinc-800 space-y-6">
-                            <!-- Step 1: Name & Phone -->
+                            class="scouter-box p-8 rounded-2xl space-y-6">
+                            <!-- Name & Phone -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Seu
-                                        Nome *</label>
+                                        class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">Seu
+                                        Nome / Guerreiro(a) *</label>
                                     <input type="text" id="form-name" required
-                                        placeholder="Ex: Camila Silva"
-                                        class="w-full bg-dark-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-gold-500">
+                                        placeholder="Ex: Goku da Silva"
+                                        class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cosmo-gold">
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Telemóvel
-                                        / WhatsApp *</label>
+                                        class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">WhatsApp
+                                        *</label>
                                     <input type="tel" id="form-phone" required
-                                        placeholder="(351) 999999999"
-                                        class="w-full bg-dark-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-gold-500">
+                                        placeholder="(11) 99999-9999"
+                                        class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cosmo-gold">
                                 </div>
                             </div>
 
-                            <!-- Step 2: Style & Size -->
+                            <!-- Anime Theme & Style -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Estilo
-                                        Desejado *</label>
-                                    <select id="form-style"
-                                        class="w-full bg-dark-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-zinc-300 focus:outline-none focus:border-gold-500">
-                                        <option value="Fine Line">Fine Line
-                                            (Traço Fino)</option>
+                                        class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">Tema
+                                        Geek / Anime *</label>
+                                    <select id="form-anime-theme"
+                                        class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-zinc-200 focus:outline-none focus:border-cosmo-gold">
                                         <option
-                                            value="Blackwork / Dotwork">Blackwork
-                                            / Dotwork</option>
+                                            value="Dragon Ball Z / Super">Dragon
+                                            Ball Z / Super</option>
                                         <option
-                                            value="Microrealismo">Microrealismo</option>
+                                            value="Cavaleiros do Zodíaco (Saint Seiya)">Cavaleiros
+                                            do Zodíaco (Saint Seiya)</option>
+                                        <option value="Naruto / Boruto">Naruto /
+                                            Boruto</option>
+                                        <option value="One Piece">One
+                                            Piece</option>
                                         <option
-                                            value="Realismo Preto e Cinza">Realismo
-                                            Preto e Cinza</option>
-                                        <option
-                                            value="Outro / Não sei definir">Outro
-                                            / A definir</option>
+                                            value="Outro Anime / Game Geek">Outro
+                                            Anime / Game Geek</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Tamanho
-                                        Aproximado (cm) *</label>
-                                    <input type="text" id="form-size" required
-                                        placeholder="Ex: 10x5 cm ou 'Pequena'"
-                                        class="w-full bg-dark-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-gold-500">
+                                        class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">Estilo
+                                        de Traço *</label>
+                                    <select id="form-style"
+                                        class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-zinc-200 focus:outline-none focus:border-cosmo-gold">
+                                        <option
+                                            value="Mangá Blackwork (Hachuras)">Mangá
+                                            Blackwork (Hachuras)</option>
+                                        <option
+                                            value="Fine Line Minimalista">Fine
+                                            Line Minimalista</option>
+                                        <option
+                                            value="Saint Seiya Gold Metal">Saint
+                                            Seiya Gold Metal</option>
+                                        <option
+                                            value="Super Saiya-jin Ki Colored">Super
+                                            Saiya-jin Ki Colored</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <!-- Step 3: Body Location -->
-                            <div>
-                                <label
-                                    class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Local
-                                    do Corpo *</label>
-                                <input type="text" id="form-placement" required
-                                    placeholder="Ex: Antebraço esquerdo, Costelas, Tornozelo..."
-                                    class="w-full bg-dark-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-gold-500">
+                            <!-- Placement & Size -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">Local
+                                        do Corpo *</label>
+                                    <input type="text" id="form-placement"
+                                        required
+                                        placeholder="Ex: Antebraço, Biceps, Costela..."
+                                        class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cosmo-gold">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">Tamanho
+                                        Aproximado (cm) *</label>
+                                    <input type="text" id="form-size" required
+                                        placeholder="Ex: 15x10 cm"
+                                        class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cosmo-gold">
+                                </div>
                             </div>
 
-                            <!-- Step 4: Idea Description -->
+                            <!-- Idea Description -->
                             <div>
                                 <label
-                                    class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Descrição
-                                    da Ideia *</label>
-                                <textarea id="form-desc" rows="4" required
-                                    placeholder="Descreva os elementos que deseja, significados ou ideias principais..."
-                                    class="w-full bg-dark-950 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-gold-500"></textarea>
+                                    class="block text-xs font-orbitron font-semibold text-ki-cyan uppercase tracking-wider mb-2">Descrição
+                                    do Projeto *</label>
+                                <textarea id="form-desc" rows="3" required
+                                    placeholder="Descreva os personagens, cenas ou símbolos geek..."
+                                    class="w-full bg-animeDark-950 border border-ki-cyan/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cosmo-gold"></textarea>
                             </div>
 
-                            <!-- Submit WhatsApp CTA -->
+                            <!-- Submit Button -->
                             <button type="submit"
-                                class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-3">
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-ki-cyan via-blue-500 to-cosmo-gold hover:opacity-90 text-black font-orbitron font-black text-xs uppercase tracking-widest shadow-[0_0_25px_rgba(0,229,255,0.4)] transition-all flex items-center justify-center gap-3">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>Enviar Projeto no WhatsApp</span>
+                                <span>Enviar Projeto via WhatsApp</span>
                             </button>
                         </form>
                     </div>
@@ -772,117 +944,109 @@
         </section>
 
         <!-- FOOTER -->
-        <footer class="bg-black py-12 border-t border-zinc-900">
+        <footer
+            class="bg-animeDark-950 py-12 border-t border-ki-cyan/20 relative z-10">
             <div
                 class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-3">
                     <span
-                        class="font-cinzel text-gold-400 font-bold text-lg">ENOQUE
+                        class="font-orbitron text-cosmo-gold font-bold text-lg">ENOQUE
                         B. TATTOO</span>
-                    <span class="text-xs text-zinc-600">| ELEVE SEU COSMO ATÉ O
-                        INFINITO!</span>
+                    <span class="text-xs font-mono text-zinc-500">| ELEVE SEU
+                        COSMO ATÉ O INFINITO!</span>
                 </div>
 
                 <div class="flex items-center gap-6 text-zinc-400 text-sm">
                     <a href="https://www.instagram.com/enoquebtattoo_/"
                         target="_blank"
-                        class="hover:text-gold-400 transition-colors">
+                        class="hover:text-ki-cyan transition-colors">
                         <i class="fa-brands fa-instagram text-xl"></i>
                     </a>
                     <a href="#orcamento"
-                        class="hover:text-gold-400 transition-colors">
+                        class="hover:text-cosmo-gold transition-colors">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </a>
                 </div>
 
-                <div class="text-xs text-zinc-500">
-                    <p>
-                        &copy; <span id="year"></span> Enoque B. Tattoo.
-                        Inspirado
-                        em DBZ &amp; Cavaleiros do Zodíaco.
-                    </p>
-                    <p>
-                        Desenvolvido por <a
-                            href="https://www.carlosthompsonstudio.com/"
-                            target="_blank"
-                            class="hover:text-gold-400 transition-colors">@Carlos
-                            Thompson Studio</a>
-                    </p>
+                <div class="text-xs font-mono text-zinc-500">
+                    &copy; <span id="year"></span> Enoque B. Tattoo. Inspirado
+                    em DBZ &amp; Cavaleiros do Zodíaco.
                 </div>
             </div>
         </footer>
 
         <!-- JAVASCRIPT LOGIC -->
         <script>
-        // Sample Static Portfolio Items (Default Mode when Instagram API Token is not attached)
-        const SAMPLE_PORTFOLIO = [
+        // Sample Anime & Geek Portfolio Dataset
+        const ANIME_PORTFOLIO = [
             {
                 id: '1',
-                category: 'fineline',
-                title: 'Constelação & Botânica',
-                style: 'Fine Line',
-                imageUrl: 'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80',
-                caption: 'Composição fina com elementos botânicos e traços geométricos minimalistas.',
-                likes: 342,
+                category: 'dragonball',
+                title: 'Goku Super Saiya-jin 3 & Ki Aura',
+                style: 'Ki Color & Manga',
+                imageUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80',
+                caption: 'Composição autoral com degradê de energia Ki e hachuras estilo mangá.',
+                likes: 950,
                 igUrl: 'https://www.instagram.com/enoquebtattoo_/'
             },
             {
                 id: '2',
-                category: 'blackwork',
-                title: 'Serpente & Crânio Autoral',
-                style: 'Blackwork',
-                imageUrl: 'https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=800&q=80',
-                caption: 'Sombra densa e hachuras expressivas para fechamento de antebraço.',
-                likes: 512,
+                category: 'cdz',
+                title: 'Saga de Gêmeos - Armadura de Ouro',
+                style: 'Saint Seiya Gold',
+                imageUrl: 'https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&w=800&q=80',
+                caption: 'Detalhes metálicos reluzentes em preto e cinza com reflexos dourados.',
+                likes: 1200,
                 igUrl: 'https://www.instagram.com/enoquebtattoo_/'
             },
             {
                 id: '3',
-                category: 'realismo',
-                title: 'Olhar Felino Microrealista',
-                style: 'Microrealismo',
-                imageUrl: 'https://images.unsplash.com/photo-1778699900805-2d5453aa1fb7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-                caption: 'Estudo em preto e cinza focado em textura de pele e profundidade no olhar.',
-                likes: 429,
+                category: 'dragonball',
+                title: 'Vegeta Príncipe dos Saiya-jins',
+                style: 'Mangá Blackwork',
+                imageUrl: 'https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=800&q=80',
+                caption: 'Blackwork intenso com sombras sólidas e traço fiel ao mestre Toriyama.',
+                likes: 880,
                 igUrl: 'https://www.instagram.com/enoquebtattoo_/'
             },
             {
                 id: '4',
-                category: 'fineline',
-                title: 'Arquitetura Neoclássica',
-                style: 'Fine Line',
+                category: 'cdz',
+                title: 'Seiya de Pégaso & Constelação',
+                style: 'Fine Line & Cosmo',
                 imageUrl: 'https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=800&q=80',
-                caption: 'Detalhes arquitetônicos em traço milimétrico autoral.',
-                likes: 620,
+                caption: 'Constelação de Pégaso em fine line com aura em pontilhismo.',
+                likes: 740,
                 igUrl: 'https://www.instagram.com/enoquebtattoo_/'
             },
             {
                 id: '5',
-                category: 'blackwork',
-                title: 'Mandala Esoterica',
-                style: 'Blackwork',
-                imageUrl: 'https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
-                caption: 'Simetria e pontilhismo de alta precisão.',
-                likes: 288,
+                category: 'shonen',
+                title: 'Naruto & Kurama Susanoo',
+                style: 'Ki Aura Color',
+                imageUrl: 'https://images.unsplash.com/photo-1550684848-acc19240409a?auto=format&fit=crop&w=800&q=80',
+                caption: 'Fechamento de braço com chakra vibrante em tons neon.',
+                likes: 1150,
                 igUrl: 'https://www.instagram.com/enoquebtattoo_/'
             },
             {
                 id: '6',
-                category: 'realismo',
-                title: 'Retrato Clássico',
-                style: 'Realismo',
-                imageUrl: 'https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&w=800&q=80',
-                caption: 'Transições de cinza suave para um acabamento realista aveludado.',
-                likes: 715,
+                category: 'shonen',
+                title: 'Luffy Gear 5 - One Piece',
+                style: 'Mangá Ink',
+                imageUrl: 'https://images.unsplash.com/photo-1590246814884-570aafd227b9?auto=format&fit=crop&w=800&q=80',
+                caption: 'Dinamismo e fluidez de traço capturando a animação autêntica.',
+                likes: 1340,
                 igUrl: 'https://www.instagram.com/enoquebtattoo_/'
             }
         ];
 
-        let currentPortfolio = [...SAMPLE_PORTFOLIO];
+        let currentPortfolio = [...ANIME_PORTFOLIO];
 
-        // INITIALIZATION
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('year').textContent = new Date().getFullYear();
+            initCosmoCanvas();
+            animateScouterCounter();
             renderGallery(currentPortfolio);
             setupHeaderScroll();
             setupMobileMenu();
@@ -890,61 +1054,113 @@
             setupFilters();
             setupInstagramApiDrawer();
             setupFormWhatsApp();
+            setupKiCalculatorMeter();
         });
 
-        // 1. Header Scroll Effect
+        // 1. Cosmo & Ki Canvas Animation Background
+        function initCosmoCanvas() {
+            const canvas = document.getElementById('cosmo-canvas');
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2 + 0.5,
+                    color: Math.random() > 0.5 ? '#00E5FF' : '#FFD700',
+                    vy: -(Math.random() * 0.6 + 0.2),
+                    alpha: Math.random()
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                particles.forEach(p => {
+                    p.y += p.vy;
+                    if (p.y < 0) {
+                        p.y = height;
+                        p.x = Math.random() * width;
+                    }
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.alpha;
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = p.color;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // 2. Scouter Counter Animation
+        function animateScouterCounter() {
+            const el = document.getElementById('power-level-counter');
+            let count = 8000;
+            const target = 9500;
+            const interval = setInterval(() => {
+                count += 45;
+                if (count >= target) {
+                    el.textContent = "9500+";
+                    clearInterval(interval);
+                } else {
+                    el.textContent = count;
+                }
+            }, 30);
+        }
+
+        // 3. Header Scroll
         function setupHeaderScroll() {
             const header = document.getElementById('main-header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 40) {
-                    header.classList.add('bg-black/90', 'backdrop-blur-md', 'py-3', 'border-b', 'border-zinc-800/80');
-                    header.classList.remove('py-5');
+                    header.classList.add('bg-animeDark-950/95', 'backdrop-blur-md', 'py-3', 'border-b', 'border-ki-cyan/30');
+                    header.classList.remove('py-4');
                 } else {
-                    header.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-3', 'border-b', 'border-zinc-800/80');
-                    header.classList.add('py-5');
+                    header.classList.remove('bg-animeDark-950/95', 'backdrop-blur-md', 'py-3', 'border-b', 'border-ki-cyan/30');
+                    header.classList.add('py-4');
                 }
             });
         }
 
-        // 2. Mobile Menu Toggle
+        // 4. Mobile Menu Toggle
         function setupMobileMenu() {
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             const links = document.querySelectorAll('.mobile-nav-link');
 
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
             links.forEach(l => l.addEventListener('click', () => menu.classList.add('hidden')));
         }
 
-        // 3. Render Gallery Grid
+        // 5. Render Gallery
         function renderGallery(items) {
             const grid = document.getElementById('gallery-grid');
             grid.innerHTML = '';
 
-            if (items.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full text-center py-12 text-zinc-500 font-light">
-                        Nenhuma publicação encontrada para este estilo.
-                    </div>
-                `;
-                return;
-            }
-
-            items.forEach((item, idx) => {
+            items.forEach((item) => {
                 const card = document.createElement('div');
-                card.className = 'group relative rounded-2xl overflow-hidden glass-panel border border-zinc-800 hover:border-gold-500/50 cursor-pointer transition-all duration-300';
+                card.className = 'group relative rounded-2xl overflow-hidden scouter-box hover:border-ki-cyan cursor-pointer transition-all duration-300';
                 card.innerHTML = `
                     <div class="aspect-square w-full overflow-hidden relative">
                         <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-[10px] uppercase font-bold tracking-widest text-gold-400 mb-1">${item.style}</span>
-                            <h3 class="font-cinzel text-lg font-bold text-white">${item.title}</h3>
-                            <div class="flex items-center gap-3 text-xs text-zinc-400 mt-2">
-                                <span><i class="fa-solid fa-heart text-red-500 mr-1"></i> ${item.likes}</span>
-                                <span><i class="fa-brands fa-instagram text-gold-400 mr-1"></i> Ver detalhes</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-animeDark-950 via-animeDark-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-[10px] uppercase font-mono font-bold tracking-widest text-cosmo-gold mb-1">${item.style}</span>
+                            <h3 class="font-orbitron text-base font-bold text-white">${item.title}</h3>
+                            <div class="flex items-center gap-3 text-xs text-ki-cyan mt-2 font-mono">
+                                <span><i class="fa-solid fa-bolt text-cosmo-gold mr-1"></i> ${item.likes} KI</span>
+                                <span><i class="fa-brands fa-instagram text-ki-cyan mr-1"></i> Ver Post</span>
                             </div>
                         </div>
                     </div>
@@ -954,7 +1170,7 @@
             });
         }
 
-        // 4. Lightbox Modal Control
+        // 6. Lightbox Controls
         function openLightbox(item) {
             document.getElementById('lightbox-img').src = item.imageUrl;
             document.getElementById('lightbox-title').textContent = item.title;
@@ -974,48 +1190,43 @@
         }
 
         document.getElementById('close-lightbox').addEventListener('click', closeLightboxModal);
-        document.getElementById('lightbox-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'lightbox-modal') closeLightboxModal();
-        });
 
-        // 5. Gallery Filters
+        // 7. Filters
         function setupFilters() {
             const btns = document.querySelectorAll('.filter-btn');
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     btns.forEach(b => {
-                        b.classList.remove('bg-gold-500', 'text-black');
+                        b.classList.remove('bg-ki-cyan', 'text-black', 'font-bold');
                         b.classList.add('text-zinc-400');
                     });
-                    btn.classList.add('bg-gold-500', 'text-black');
+                    btn.classList.add('bg-ki-cyan', 'text-black', 'font-bold');
                     btn.classList.remove('text-zinc-400');
 
                     const filter = btn.dataset.filter;
                     if (filter === 'all') {
                         renderGallery(currentPortfolio);
                     } else {
-                        const filtered = currentPortfolio.filter(i => i.category === filter);
-                        renderGallery(filtered);
+                        renderGallery(currentPortfolio.filter(i => i.category === filter));
                     }
                 });
             });
         }
 
-        // 6. Accordion Setup
+        // 8. Accordion
         function setupAccordion() {
             const toggles = document.querySelectorAll('.faq-toggle');
             toggles.forEach(toggle => {
                 toggle.addEventListener('click', () => {
                     const content = toggle.nextElementSibling;
                     const icon = toggle.querySelector('i');
-                    
                     content.classList.toggle('hidden');
                     icon.classList.toggle('rotate-180');
                 });
             });
         }
 
-        // 7. Instagram Graph API Drawer & Direct Fetching Logic
+        // 9. IG Graph API Setup
         function setupInstagramApiDrawer() {
             const toggleBtn = document.getElementById('toggle-api-drawer-btn');
             const drawer = document.getElementById('api-config-drawer');
@@ -1023,102 +1234,92 @@
             const resetBtn = document.getElementById('btn-reset-instagram');
             const tokenInput = document.getElementById('instagram-token-input');
             const feedback = document.getElementById('api-feedback-msg');
-            const badge = document.getElementById('api-status-badge');
 
-            toggleBtn.addEventListener('click', () => {
-                drawer.classList.toggle('hidden');
-            });
+            toggleBtn.addEventListener('click', () => drawer.classList.toggle('hidden'));
 
             fetchBtn.addEventListener('click', async () => {
                 const token = tokenInput.value.trim();
                 if (!token) {
-                    feedback.className = "text-xs mt-3 text-red-400";
-                    feedback.textContent = "Por favor, informe um token de acesso válido.";
+                    feedback.className = "text-xs font-mono mt-3 text-red-400";
+                    feedback.textContent = "Erro: Digite um token de acesso do Instagram.";
                     feedback.classList.remove('hidden');
                     return;
                 }
 
-                feedback.className = "text-xs mt-3 text-gold-400";
-                feedback.textContent = "Buscando dados da API do Instagram...";
+                feedback.className = "text-xs font-mono mt-3 text-ki-cyan";
+                feedback.textContent = "Sincronizando com a API do Instagram...";
                 feedback.classList.remove('hidden');
 
                 try {
-                    // Instagram Graph API endpoint for user media
-                    const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,timestamp,like_count&access_token=${token}`;
+                    const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,like_count&access_token=${token}`;
                     const response = await fetch(url);
                     const data = await response.json();
 
-                    if (data.error) {
-                        throw new Error(data.error.message || "Erro na autenticação do Instagram.");
-                    }
-
                     if (data.data && data.data.length > 0) {
-                        // Map IG posts to portfolio format
                         currentPortfolio = data.data.map((post, idx) => ({
                             id: post.id,
                             category: 'all',
                             title: post.caption ? post.caption.substring(0, 30) + '...' : `Post IG #${idx + 1}`,
-                            style: 'Feed IG',
-                            imageUrl: post.media_url || 'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80',
-                            caption: post.caption || 'Sem legenda no Instagram.',
-                            likes: post.like_count || Math.floor(Math.random() * 300) + 50,
-                            igUrl: post.permalink || 'https://www.instagram.com/enoquebtattoo_/'
+                            style: 'Feed Live IG',
+                            imageUrl: post.media_url || ANIME_PORTFOLIO[0].imageUrl,
+                            caption: post.caption || 'Sem legenda.',
+                            likes: post.like_count || 999,
+                            igUrl: post.permalink
                         }));
-
                         renderGallery(currentPortfolio);
-                        feedback.className = "text-xs mt-3 text-emerald-400";
-                        feedback.textContent = `Sincronizado com sucesso! ${currentPortfolio.length} posts carregados diretamente da API.`;
-                        
-                        badge.className = "px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-gold-950 text-gold-400 border border-gold-800/50";
-                        badge.textContent = "Modo Live IG Graph API";
-                    } else {
-                        feedback.className = "text-xs mt-3 text-yellow-400";
-                        feedback.textContent = "Nenhum post encontrado para esta conta.";
+                        feedback.className = "text-xs font-mono mt-3 text-emerald-400";
+                        feedback.textContent = "Posts do Instagram carregados com sucesso!";
                     }
                 } catch (err) {
-                    feedback.className = "text-xs mt-3 text-red-400";
-                    feedback.textContent = `Falha na API: ${err.message}. Exibindo dados locais de demonstração.`;
+                    feedback.className = "text-xs font-mono mt-3 text-red-400";
+                    feedback.textContent = "Falha ao conectar com a API: " + err.message;
                 }
             });
 
             resetBtn.addEventListener('click', () => {
-                currentPortfolio = [...SAMPLE_PORTFOLIO];
+                currentPortfolio = [...ANIME_PORTFOLIO];
                 renderGallery(currentPortfolio);
                 tokenInput.value = '';
                 feedback.classList.add('hidden');
-                badge.className = "px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800/50";
-                badge.textContent = "Modo Portfólio Local";
             });
         }
 
-        // 8. Form to WhatsApp Generator
+        // 10. Ki Calculator Meter
+        function setupKiCalculatorMeter() {
+            const sizeInput = document.getElementById('form-size');
+            const meter = document.getElementById('estimated-ki-power');
+
+            sizeInput.addEventListener('input', () => {
+                const val = parseInt(sizeInput.value) || 10;
+                const power = val * 650;
+                meter.textContent = `${power + 4000} KI POWER LEVEL`;
+            });
+        }
+
+        // 11. WhatsApp Form Handler
         function setupFormWhatsApp() {
             const form = document.getElementById('quote-form');
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-
                 const name = document.getElementById('form-name').value;
                 const phone = document.getElementById('form-phone').value;
+                const theme = document.getElementById('form-anime-theme').value;
                 const style = document.getElementById('form-style').value;
-                const size = document.getElementById('form-size').value;
                 const placement = document.getElementById('form-placement').value;
+                const size = document.getElementById('form-size').value;
                 const desc = document.getElementById('form-desc').value;
 
-                // Formatted WhatsApp Message
-                const message = `*SOLICITAÇÃO DE ORÇAMENTO - ENOQUE B. TATTOO*\n\n` +
-                                `👤 *Nome:* ${name}\n` +
+                const message = `*ORÇAMENTO GEEK - ENOQUE B. TATTOO*\n\n` +
+                                `⚡ *Nome:* ${name}\n` +
                                 `📱 *WhatsApp:* ${phone}\n` +
-                                `🎨 *Estilo:* ${style}\n` +
-                                `📏 *Tamanho:* ${size}\n` +
+                                `🐉 *Tema Anime/Geek:* ${theme}\n` +
+                                `🎨 *Estilo de Traço:* ${style}\n` +
                                 `📍 *Local do Corpo:* ${placement}\n` +
-                                `📝 *Ideia:* ${desc}\n\n` +
-                                `_Mensagem enviada através do site oficial._`;
+                                `📏 *Tamanho:* ${size}\n` +
+                                `📝 *Descrição da Ideia:* ${desc}\n\n` +
+                                `_Eleve meu Cosmo na Pele!_`;
 
-                const encodedText = encodeURIComponent(message);
-                // Placeholder WhatsApp number (replace with artist's direct number)
-                const whatsappUrl = `https://wa.me/351939429702?text=${encodedText}`;
-
-                window.open(whatsappUrl, '_blank');
+                window.open(`https://wa.me/5511999998888?text=${encodeURIComponent(message)}`, '_blank');
             });
         }
     </script>
